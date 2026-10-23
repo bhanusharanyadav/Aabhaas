@@ -15,7 +15,8 @@ except Exception:
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "Dashboard", "data")
-PROCESSED_DIR = os.path.join(BASE_DIR, "DATA", "processed")
+# Note: folder is 'Processed' (capital P) — Linux filesystems are case-sensitive
+PROCESSED_DIR = os.path.join(BASE_DIR, "DATA", "Processed")
 HISTORICAL_GRIB_DIR = os.path.join(BASE_DIR, "DATA", "Raw", "historical data")
 EVENT_GRIB_DIR = os.path.join(BASE_DIR, "DATA", "Raw", "Landslide event")
 

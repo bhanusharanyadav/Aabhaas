@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# GRIB index files (auto-generated, not needed in repo)
+*.idx
+
+# Large raw data files — too big for free Git hosting
+# Keep processed CSVs, exclude raw GRIBs
+DATA/Raw/
+DATA/processed/*.grib
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment secrets
+.env
+*.env
+
+# Streamlit local secrets (never commit these)
+.streamlit/secrets.toml
+# Note: .streamlit/config.toml IS tracked (needed for Render deployment)
