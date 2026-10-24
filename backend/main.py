@@ -24,11 +24,18 @@ else:
 
 app = FastAPI(title=APP_NAME, version="0.1.0")
 
+
 origins_raw = os.getenv(
     "PUBLIC_WEBSITE_ORIGINS",
-    "http://localhost:5500,http://127.0.0.1:5500"
+    "https://aabhaas-public-alerts.onrender.com"
 )
-origins = [origin.strip() for origin in origins_raw.split(",") if origin.strip()]
+
+origins = [
+    origin.strip().rstrip("/")
+    for origin in origins_raw.split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -36,6 +43,8 @@ app.add_middleware(
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type", "X-Admin-Key"],
 )
+
+
 
 Source = Literal["AI_MODEL", "IOT_SENSOR", "MANUAL"]
 Severity = Literal["LOW", "MODERATE", "HIGH", "CRITICAL"]
