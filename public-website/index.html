@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2b">
+  <title>Aabhaas | Landslide Alert</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">A</div>
+    <div>
+      <p class="eyebrow">EARLY WARNING SYSTEM</p>
+      <h1>Aabhaas</h1>
+    </div>
+    <span class="live-pill"><span class="pulse"></span> LIVE STATUS</span>
+  </header>
+
+  <main class="page">
+    <section class="intro">
+      <p class="eyebrow">LANDSLIDE RISK INFORMATION</p>
+      <h2>Know the current alert status.</h2>
+      <p class="intro-copy">This page checks for the latest alert from the Aabhaas monitoring system while it remains open.</p>
+    </section>
+
+    <section id="status-card" class="status-card status-unknown" aria-live="polite">
+      <div id="status-icon" class="status-icon">…</div>
+      <div class="status-content">
+        <p class="eyebrow">CURRENT STATUS</p>
+        <h2 id="status-title">Checking alert status</h2>
+        <p id="status-message">Connecting to the Aabhaas alert service…</p>
+        <div class="meta-row">
+          <span id="status-location">Location: —</span>
+          <span id="status-updated">Updated: —</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card">
+        <h3>What should I do?</h3>
+        <p>Follow instructions from local disaster-management authorities. If you observe signs of slope failure, move away from the danger area and contact local emergency services.</p>
+      </article>
+      <article class="info-card">
+        <h3>Important information</h3>
+        <p>No active alert does not guarantee that an area is safe. This prototype may have limited coverage or delayed data and is not a substitute for official warnings.</p>
+      </article>
+    </section>
+
+    <footer>
+      <span>Aabhaas · Public Alert Interface</span>
+      <span id="connection-state">Connecting…</span>
+    </footer>
+  </main>
+
+  <div id="alert-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div id="modal-panel" class="modal-panel severity-high">
+      <div class="modal-symbol">!</div>
+      <p class="eyebrow">AABHAAS ALERT</p>
+      <h2 id="modal-title">Landslide risk alert</h2>
+      <p id="modal-message"></p>
+      <div class="modal-details">
+        <span id="modal-severity"></span>
+        <span id="modal-location"></span>
+        <span id="modal-time"></span>
+      </div>
+      <button id="dismiss-modal" type="button">I HAVE READ THIS ALERT</button>
+      <p class="modal-note">Continue following official local emergency guidance.</p>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -36,9 +36,14 @@ DATA/processed/*.grib
 .DS_Store
 Thumbs.db
 
+
 # Environment secrets
+
 .env
+.env.*
 *.env
+!.env.example
+
 
 # Streamlit local secrets (never commit these)
 .streamlit/secrets.toml
